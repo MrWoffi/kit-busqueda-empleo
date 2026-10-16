@@ -17,6 +17,11 @@ def limpio(t):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", t or ""))).strip()
 
 
+def ruta(href):
+    """El portal escribe algunos enlaces con entidades HTML (&#xA0;) y un ancla de seguimiento (#lc=...)."""
+    return urllib.parse.quote(html.unescape(href).split("#")[0], safe="/-_.")
+
+
 def slug(t):
     return re.sub(r"[^a-z0-9]+", "-", sin_tildes(t)).strip("-")
 
@@ -40,7 +45,7 @@ def computrabajo(cfg):
                 articulos = re.findall(r"<article[\s\S]*?</article>", s)
                 for a in articulos:
                     i = re.search(r"data-id='([0-9A-F]{32})'", a)
-                    t = re.search(r'<a class="js-o-link[^"]*" href="([^"#]+)[^"]*">([\s\S]*?)</a>', a)
+                    t = re.search(r'<a class="js-o-link[^"]*" href="([^"]+)">([\s\S]*?)</a>', a)
                     if not i or not t:
                         continue
                     ps = [limpio(p) for p in re.findall(r"<p[^>]*>([\s\S]*?)</p>", a)]
@@ -51,7 +56,7 @@ def computrabajo(cfg):
                     yield {"id": "ct-" + i.group(1), "portal": "computrabajo", "puesto": limpio(t.group(2)),
                            "empresa": re.sub(r"^\d+[.,]\d\s*", "", ps[0]) if ps else "", "ubicacion": ubicacion,
                            "sueldo": limpio(sueldo.group(1)) if sueldo else "", "publicado": ps[-1] if ps else "",
-                           "busqueda": kw, "url": f"https://{pais}.computrabajo.com{t.group(1)}"}
+                           "busqueda": kw, "url": f"https://{pais}.computrabajo.com{ruta(t.group(1))}"}
                 time.sleep(1.5)
                 if len(articulos) < 20:
                     break
