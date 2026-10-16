@@ -12,6 +12,7 @@ Se leen antes de cada envío. Cada una nació de un error real en postulaciones 
 ## Lo que falta: cómo se responde
 
 - **Pregunta de sí o no** ("¿Manejas SAP?"): No. Sin rodeos.
+- **Sí o no con años dentro** ("¿Tienes 3+ años de experiencia en X?"): nunca se responde por costumbre. Se compara el número con el perfil y se marca Sí solo si los años reales llegan.
 - **Texto libre**: no se escribe "no he usado X" ni "no tengo experiencia en X". Se responde con lo que sí hace que más se acerca, sin afirmar lo que no tiene. Ejemplo: si piden SAP y usó otro sistema de compras, "Registré órdenes de compra y saldos en [sistema] en [empresa]".
 - **Años en una herramienta que no usa**: 0. En una que conoce poco: el número real, sin redondear hacia arriba. Ojo con preguntas que se parecen: "¿años con SSIS?" no es lo mismo que "¿años con SQL?".
 - **Nivel obligatorio** (básico, intermedio, avanzado): el que dice el perfil. Si el perfil dice "curso de nivel intermedio" pero la persona no lo ha aplicado a fondo, se marca Básico.

@@ -2,8 +2,8 @@
     python herramientas/detalle.py <url o id> [<url o id> ...]
 Acepta la URL del aviso o el id que aparece en la búsqueda (ct-..., li-..., gob-...).
 """
-import html, re, sys
-from comun import config, descargar
+import html, re, sys, time
+from comun import descargar
 
 
 def limpio(t):
@@ -25,7 +25,8 @@ def computrabajo(url):
 def linkedin(numero):
     s = descargar("https://www.linkedin.com/jobs-guest/jobs/api/jobPosting/" + numero)
     if not s:
-        return ""
+        return ("LinkedIn no entregó el aviso (suele pasar justo después de una búsqueda). Leerlo con el navegador "
+                f"conectado: linkedin.com/jobs/view/{numero}, botón 'más' y bloque 'Acerca del empleo'. O reintentar en una hora.")
     d = re.search(r"show-more-less-html__markup[^>]*>([\s\S]*?)</div>", s)
     criterios = re.findall(r'description__job-criteria-subheader">([\s\S]*?)</h3>[\s\S]*?criteria-text[^>]*>([\s\S]*?)</span>', s)
     extra = "\n".join(f"{limpio(a)}: {limpio(b)}" for a, b in criterios)
@@ -48,10 +49,14 @@ def getonboard(slug):
 
 
 def main():
-    pais = config()["pais"]
+    linkedin_previos = 0
     for x in sys.argv[1:]:
         if x.startswith("li-") or "linkedin.com" in x:
-            texto = linkedin(re.search(r"(\d{6,})", x).group(1))
+            if linkedin_previos:
+                time.sleep(2.5)
+            linkedin_previos += 1
+            numero = re.search(r"(\d{6,})", x)
+            texto = linkedin(numero.group(1)) if numero else "No reconozco ese id de LinkedIn. Usa el de la búsqueda (li-123...) o la URL del aviso."
         elif x.startswith("gob-") or "getonbrd.com" in x:
             texto = getonboard(x[4:] if x.startswith("gob-") else x.rstrip("/").split("/")[-1])
         elif x.startswith("ct-"):

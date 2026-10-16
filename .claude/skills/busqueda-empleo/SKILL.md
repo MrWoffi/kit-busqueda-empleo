@@ -40,7 +40,8 @@ Kit de Altrion Partners (altrionpartners.com), licencia MIT. El método de perfi
 ## Revisión diaria
 
 1. `python herramientas/buscar.py` (los tres portales; quita los ya registrados y las palabras excluidas). Guarda la lista en `mis-datos/busquedas/`.
-2. Lee el título, empresa, ubicación y sueldo de cada aviso. Para los que pasan a primera vista, `python herramientas/detalle.py <url o id>`.
+2. Lee el título, empresa, ubicación y sueldo de cada aviso. Para los que pasan a primera vista, `python herramientas/detalle.py <url o id>` (en LinkedIn hace pausas de 2.5 s entre avisos).
+   - Justo después de una búsqueda, LinkedIn suele responder 429 al pedir el detalle. Si el navegador está conectado, abre `linkedin.com/jobs/view/<número>`, pulsa "más" en la descripción y lee el bloque "Acerca del empleo" desde "Requisitos" o "Perfil", en trozos. Si no, reintenta en una hora y sigue con los otros portales.
 3. Aplica `rubrica.md`: filtros duros primero, después puntaje. Registra también los descartados con su razón: `python herramientas/tracker.py agregar <id> --estado descartado --notas "razón"`.
 4. Muestra a la persona una tabla corta: puesto, empresa, puntaje, por qué. Ella elige.
 5. Por cada aviso elegido, postula según la sección siguiente y registra: `python herramientas/tracker.py agregar <id> --puntaje N --sueldo X --cv cvs/archivo.pdf`.
