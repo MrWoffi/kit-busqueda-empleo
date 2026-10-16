@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía paso a paso — Kit de búsqueda de empleo con IA</title>
+<style>
+  @page { size: A4; margin: 16mm 17mm 18mm 17mm;
+    @bottom-center { content: "Kit de búsqueda de empleo con IA · Altrion Partners · altrionpartners.com · página " counter(page); font: 7.5pt "Segoe UI", Arial, sans-serif; color: #7a8590; } }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 10.3pt; line-height: 1.5; color: #1d2327; margin: 0; }
+  h1 { font-size: 23pt; line-height: 1.15; margin: 0 0 4pt; color: #0f1e33; }
+  .sub { font-size: 11.5pt; color: #3b4a5c; margin: 0 0 14pt; }
+  h2 { font-size: 13.5pt; color: #0f1e33; margin: 18pt 0 6pt; padding-top: 2pt; break-after: avoid; }
+  h2 .n { display: inline-block; min-width: 20pt; height: 20pt; line-height: 20pt; text-align: center; border-radius: 10pt; background: #1f3a5f; color: #fff; font-size: 10pt; margin-right: 6pt; vertical-align: 1pt; }
+  h3 { font-size: 10.8pt; margin: 10pt 0 3pt; color: #1f3a5f; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  ol, ul { margin: 2pt 0 8pt; padding-left: 16pt; }
+  li { margin-bottom: 3pt; }
+  .box { border: 1pt solid #c9d3de; border-left: 3.5pt solid #1f3a5f; background: #f4f7fa; padding: 7pt 10pt; margin: 8pt 0 10pt; border-radius: 3pt; break-inside: avoid; }
+  .box.warn { border-left-color: #b45309; background: #fdf7ee; border-color: #ead8bf; }
+  .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+  code, .k { font-family: Consolas, "Courier New", monospace; font-size: 9.4pt; background: #eef1f5; padding: 0.5pt 3.5pt; border-radius: 2pt; }
+  .say { font-family: Consolas, "Courier New", monospace; font-size: 9.6pt; background: #0f1e33; color: #f3f6fa; padding: 2pt 6pt; border-radius: 3pt; white-space: nowrap; }
+  table { border-collapse: collapse; width: 100%; margin: 4pt 0 10pt; font-size: 9.6pt; break-inside: avoid; }
+  th, td { border: 0.8pt solid #d3dbe4; padding: 4pt 6pt; text-align: left; vertical-align: top; }
+  th { background: #e9eef4; color: #0f1e33; font-weight: 600; }
+  .cover { border-bottom: 2pt solid #1f3a5f; padding-bottom: 10pt; margin-bottom: 12pt; }
+  .brand { font-size: 9pt; letter-spacing: 1.4pt; text-transform: uppercase; color: #1f3a5f; font-weight: 700; margin-bottom: 8pt; }
+  .tree { font-family: Consolas, "Courier New", monospace; font-size: 9pt; background: #f4f7fa; border: 1pt solid #d3dbe4; padding: 7pt 10pt; white-space: pre; line-height: 1.45; border-radius: 3pt; break-inside: avoid; }
+  .page-break { break-before: page; }
+  .muted { color: #5a6672; font-size: 9.2pt; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">Altrion Partners</div>
+  <h1>Kit de búsqueda de empleo con IA</h1>
+  <p class="sub">Guía paso a paso para instalarlo y usarlo, aunque nunca hayas programado.</p>
+</div>
+
+<h2>Qué hace este kit</h2>
+<p>Es un asistente que trabaja contigo en tu búsqueda de empleo. Le hablas en español, como en un chat, y él:</p>
+<ul>
+  <li>arma tu CV en PDF con tus datos reales, y lo ajusta para cada puesto sin inventar nada;</li>
+  <li>busca cada día los avisos nuevos en Computrabajo, LinkedIn y Get on Board;</li>
+  <li>te dice a cuáles conviene postular y por qué, con un puntaje de 0 a 100;</li>
+  <li>prepara las respuestas de cada formulario y, si lo conectas a tu navegador, las llena por ti;</li>
+  <li>lleva el registro de todas tus postulaciones y en qué estado está cada una;</li>
+  <li>prepara tus entrevistas y practica contigo.</li>
+</ul>
+<div class="box">
+  <p><b>Lo que no hace:</b> no postula solo ni en masa, no envía mensajes sin tu permiso, no escribe tu documento de identidad y no crea cuentas a tu nombre. Tú decides y apruebas cada paso.</p>
+</div>
+
+<h2>Lo que necesitas</h2>
+<table>
+  <tr><th style="width:30%">Qué</th><th>Detalle</th></tr>
+  <tr><td>Computadora</td><td>Windows 10 o más reciente, o Mac con macOS 13 o más. 4 GB de RAM como mínimo.</td></tr>
+  <tr><td>Cuenta de Claude de pago</td><td>Plan <b>Pro</b> o superior. El plan gratuito no incluye Claude Code. Al 15 de octubre de 2026, Pro cuesta USD 20 al mes, o USD 17 al mes si pagas el año completo (USD 200). Revisa el precio vigente en claude.com/pricing.</td></tr>
+  <tr><td>Visual Studio Code</td><td>Gratis. Es el programa donde vas a conversar con el asistente.</td></tr>
+  <tr><td>Python</td><td>Gratis. Lo usan los buscadores de avisos. Si no lo tienes, el asistente te ayuda a instalarlo.</td></tr>
+  <tr><td>Google Chrome</td><td>Gratis. Para generar el CV en PDF y, si quieres, para que el asistente llene formularios.</td></tr>
+  <tr><td>Tiempo</td><td>Unos 30 minutos para instalar y 20 minutos para la primera conversación.</td></tr>
+</table>
+
+<h2><span class="n">1</span>Contrata Claude Pro</h2>
+<ol>
+  <li>Entra a <b>claude.ai</b> y crea tu cuenta (o inicia sesión).</li>
+  <li>Elige el plan <b>Pro</b> y paga con tarjeta.</li>
+</ol>
+
+<h2><span class="n">2</span>Instala Visual Studio Code y la extensión de Claude</h2>
+<ol>
+  <li>Descarga Visual Studio Code desde <b>code.visualstudio.com</b> e instálalo con las opciones por defecto.</li>
+  <li>Ábrelo. Presiona <span class="k">Ctrl + Shift + X</span> (en Mac, <span class="k">Cmd + Shift + X</span>) para abrir las extensiones.</li>
+  <li>Busca <b>Claude Code</b>, verifica que el autor sea <b>Anthropic</b> y pulsa <b>Install</b>.</li>
+  <li>En la barra de la izquierda aparece un ícono con forma de chispa. Haz clic y pulsa <b>Sign in</b>. Se abre el navegador: inicia sesión con tu cuenta de Claude y autoriza.</li>
+</ol>
+
+<h2><span class="n">3</span>Descarga el kit</h2>
+<p>Te lo pueden pasar de dos formas:</p>
+<ul>
+  <li><b>Desde GitHub:</b> abre el enlace del repositorio, pulsa el botón verde <b>Code</b> y luego <b>Download ZIP</b>.</li>
+  <li><b>Como archivo ZIP:</b> por correo, WhatsApp o Drive.</li>
+</ul>
+<p>En los dos casos, haz clic derecho sobre el ZIP, elige <b>Extraer todo</b> y guarda la carpeta en tus <b>Documentos</b>. Debe quedar así:</p>
+<div class="tree">kit-busqueda-empleo/
+  CLAUDE.md            (las instrucciones del asistente)
+  README.md
+  config.ejemplo.json
+  guia/                (esta guía)
+  herramientas/        (los buscadores de avisos)
+  mis-datos/           (aquí quedarán tu perfil, tu CV y tu registro)
+  plantillas/</div>
+
+<h2><span class="n">4</span>Abre el kit y di hola</h2>
+<ol>
+  <li>En VS Code: menú <b>Archivo → Abrir carpeta</b> y elige la carpeta <b>kit-busqueda-empleo</b>. Si pregunta si confías en los autores, responde que sí.</li>
+  <li>Haz clic en el ícono de chispa de la barra izquierda y abre una conversación nueva.</li>
+  <li>Escribe <span class="say">hola</span> y presiona Enter.</li>
+</ol>
+<p>El asistente se presenta, revisa que todo esté instalado y empieza a hacerte preguntas. Si falta Python, te lo dice y te pide permiso para instalarlo. Después tendrás que cerrar y volver a abrir VS Code, y escribir <span class="say">hola</span> otra vez.</p>
+<div class="box">
+  <p><b>Permisos.</b> El asistente te va a pedir permiso antes de correr un buscador o crear un archivo. Lee qué quiere hacer y acepta. Para los comandos de la carpeta <code>herramientas</code> puedes elegir que no vuelva a preguntar.</p>
+</div>
+
+<h2 class="page-break"><span class="n">5</span>La primera conversación: tu perfil y tu CV</h2>
+<p>Dura unos 20 minutos. El asistente pregunta una cosa a la vez:</p>
+<ul>
+  <li>tus datos de contacto (nunca tu documento de identidad);</li>
+  <li>tus estudios, con su estado exacto: estudiante, egresado, bachiller o titulado;</li>
+  <li>cada trabajo: qué hacías y algún resultado con número si lo hay;</li>
+  <li>cursos, idiomas y herramientas, con tu nivel real;</li>
+  <li>lo que <b>no</b> manejas de lo que suelen pedir en tu rubro;</li>
+  <li>qué buscas: puestos, ciudades, modalidad, sueldo mínimo y zonas donde no trabajarías.</li>
+</ul>
+<div class="box">
+  <p><b>Ahorra tiempo:</b> si tienes un CV en PDF, cópialo dentro de la carpeta <code>mis-datos</code> antes de empezar y dile su nombre al asistente.</p>
+</div>
+<p>Con tus respuestas escribe tu <b>perfil</b> (el único lugar de donde saldrá cualquier dato tuyo) y tu <b>CV general en PDF</b>. Revísalos con calma. Si algo está mal o falta, díselo: lo corrige al momento.</p>
+<div class="box warn">
+  <p><b>Sé honesto con tus niveles.</b> El kit está hecho para no inventar. Si dices que manejas algo que no manejas, lo vas a tener que sostener en la entrevista. Es mejor un CV real con 20 postulaciones buenas que uno inflado.</p>
+</div>
+
+<h2><span class="n">6</span>Conecta tu navegador (opcional, recomendado)</h2>
+<p>Sin este paso el asistente prepara las respuestas y tú las pegas en cada formulario. Con este paso, él mismo llena el formulario en tu Chrome y tú solo revisas y aprietas Enviar.</p>
+<ol>
+  <li>En Chrome, instala la extensión <b>Claude</b> desde la Chrome Web Store (autor: Anthropic) e inicia sesión con la misma cuenta de Claude.</li>
+  <li>En Chrome, inicia sesión tú mismo en Computrabajo y LinkedIn.</li>
+  <li>En la conversación de VS Code, escribe <span class="say">@browser</span> al inicio de tu pedido. Ejemplo: <span class="say">@browser postula a este aviso: (enlace)</span></li>
+</ol>
+<p class="muted">Si aparece un captcha o una pantalla de inicio de sesión, el asistente se detiene y te pide que lo resuelvas tú.</p>
+
+<h2><span class="n">7</span>Tu rutina diaria (10 a 20 minutos)</h2>
+<ol>
+  <li>Abre VS Code con la carpeta del kit y escribe <span class="say">busca ofertas de hoy</span>.</li>
+  <li>El asistente busca en los tres portales, quita lo que ya viste y te muestra una tabla con puntaje y motivo.</li>
+  <li>Eliges a cuáles postular.</li>
+  <li>Para cada uno, el asistente prepara las respuestas (y el CV ajustado si el puntaje es alto). Revisas y envías.</li>
+  <li>Al final te da el resumen: cuántas enviaste, qué procesos siguen vivos y qué necesita de ti.</li>
+</ol>
+
+<h3>Frases que puedes usar</h3>
+<table>
+  <tr><th style="width:44%">Escribe</th><th>Qué pasa</th></tr>
+  <tr><td><span class="say">busca ofertas de hoy</span></td><td>Búsqueda en los tres portales y tabla de candidatos</td></tr>
+  <tr><td><span class="say">postula a este aviso: (enlace)</span></td><td>Evalúa el aviso y prepara la postulación</td></tr>
+  <tr><td><span class="say">ajusta mi CV para este puesto</span></td><td>Versión del CV con el énfasis de ese aviso, sin datos nuevos</td></tr>
+  <tr><td><span class="say">me llamaron de (empresa)</span></td><td>Actualiza el registro y arma la guía de entrevista</td></tr>
+  <tr><td><span class="say">hagamos un simulacro</span></td><td>Entrevista de práctica, una pregunta a la vez</td></tr>
+  <tr><td><span class="say">cómo van mis postulaciones</span></td><td>Resumen del registro y procesos vivos</td></tr>
+  <tr><td><span class="say">redacta un seguimiento para (empresa)</span></td><td>Mensaje corto al reclutador para que tú lo envíes</td></tr>
+  <tr><td><span class="say">agrega a mi perfil que ...</span></td><td>Suma un dato nuevo y verdadero a tu perfil</td></tr>
+</table>
+
+<h2><span class="n">8</span>Cuando te llaman</h2>
+<p>Escribe <span class="say">me llamaron de (empresa) para (puesto)</span>. El asistente lee el aviso, el CV que enviaste y tu perfil, y te arma una guía con:</p>
+<ul>
+  <li>tus cifras clave para tenerlas a mano;</li>
+  <li>todo lo que ya le dijiste a esa empresa, para que lo sostengas;</li>
+  <li>diez preguntas probables con respuestas cortas basadas en tu experiencia real;</li>
+  <li>cómo responder con honestidad lo que te piden y no tienes;</li>
+  <li>preguntas difíciles y tres preguntas para hacerle a la empresa.</li>
+</ul>
+<p>Después pide <span class="say">hagamos un simulacro</span> y practica.</p>
+
+<h2><span class="n">9</span>Tu privacidad</h2>
+<ul>
+  <li>Todo lo tuyo (perfil, CV, registro, guías de entrevista) queda en la carpeta <code>mis-datos</code>, en tu computadora.</li>
+  <li>El asistente nunca escribe tu documento de identidad. Si un formulario lo pide, lo llenas tú.</li>
+  <li>No se envía ninguna postulación ni mensaje sin tu aprobación.</li>
+  <li>Si copias el kit a tu propio GitHub, la carpeta <code>mis-datos</code> no se sube. Aun así, deja tu copia como <b>privada</b>.</li>
+  <li>Lo que conversas con el asistente pasa por los servidores de Anthropic, como cualquier conversación con Claude.</li>
+</ul>
+
+<h2><span class="n">10</span>Si algo falla</h2>
+<table>
+  <tr><th style="width:38%">Problema</th><th>Qué hacer</th></tr>
+  <tr><td>No veo el ícono de chispa</td><td>Revisa que la extensión Claude Code esté instalada y reinicia VS Code.</td></tr>
+  <tr><td>Dice que Python no está instalado</td><td>Deja que el asistente lo instale, o descárgalo de python.org/downloads. Luego cierra y abre VS Code.</td></tr>
+  <tr><td>La búsqueda no trae nada</td><td>Pide <span class="say">revisa por qué la búsqueda no trae avisos</span>. A veces los portales cambian su página.</td></tr>
+  <tr><td>Dice "429" en LinkedIn</td><td>LinkedIn pidió bajar el ritmo. Se vuelve a intentar al día siguiente.</td></tr>
+  <tr><td><code>@browser</code> no funciona</td><td>Revisa que Chrome esté abierto y que la extensión Claude tenga la sesión iniciada con la misma cuenta. Escribe <code>/chrome</code> en la conversación y elige reconectar.</td></tr>
+  <tr><td>El asistente escribió algo que no es cierto</td><td>Díselo en ese momento. Corrige el dato y la regla para que no se repita.</td></tr>
+</table>
+
+<div class="box" style="margin-top:16pt">
+  <p><b>Kit creado por Altrion Partners</b> · altrionpartners.com</p>
+  <p class="muted">Licencia MIT. Puedes usarlo, copiarlo y modificarlo libremente, conservando el aviso de copyright y la licencia. El método de perfil verificado, rúbrica y registro está adaptado de ai-job-search de Mads Lorentzen (MIT).</p>
+</div>
+
+</body>
+</html>

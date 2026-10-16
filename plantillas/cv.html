@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>NOMBRE APELLIDO — CV</title>
+<!--
+  Plantilla de CV de una página (A4). Claude la llena solo con datos de mis-datos/perfil.md.
+  Reemplazar todo lo que está en MAYÚSCULAS. Borrar los bloques que no apliquen.
+  PDF: python herramientas/generar_pdf.py mis-datos/cvs/cv-general.html
+-->
+<style>
+  @page { size: A4; margin: 10mm 15mm 8mm 15mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 9.4pt; line-height: 1.38; color: #1d2327; margin: 0; }
+  header { border-bottom: 1.6pt solid #1f3a5f; padding-bottom: 7pt; margin-bottom: 8pt; }
+  h1 { font-size: 21pt; letter-spacing: 0.4pt; margin: 0; font-weight: 700; color: #111827; }
+  .tagline { font-size: 10.5pt; color: #1f3a5f; font-weight: 600; margin-top: 1pt; }
+  .contact { margin-top: 4pt; color: #454d54; font-size: 8.9pt; display: flex; flex-wrap: wrap; row-gap: 1pt; }
+  .contact span { white-space: nowrap; }
+  .contact span + span::before { content: " · "; white-space: pre; color: #9aa3a9; }
+  h2 { font-size: 8.8pt; letter-spacing: 1.3pt; text-transform: uppercase; color: #1f3a5f; margin: 9pt 0 3.5pt; font-weight: 700; }
+  p { margin: 0; }
+  .role { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; margin-top: 6pt; }
+  .role .org { font-weight: 700; font-size: 9.9pt; color: #111827; }
+  .role .pos { color: #333b41; }
+  .role .when { white-space: nowrap; color: #5a636a; font-size: 8.7pt; }
+  .ctx { color: #5a636a; font-style: italic; margin-top: 0.5pt; }
+  ul { margin: 2.5pt 0 0; padding-left: 11pt; }
+  li { margin-bottom: 1.8pt; }
+  li::marker { color: #1f3a5f; }
+  .grid { display: grid; grid-template-columns: 120pt 1fr; row-gap: 2pt; margin: 0; }
+  .grid dt { font-weight: 600; color: #333b41; }
+  .grid dd { margin: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>NOMBRE APELLIDO</h1>
+  <div class="tagline">PUESTO OBJETIVO · ESPECIALIDAD</div>
+  <div class="contact">
+    <span>CIUDAD · MODALIDAD O DISPONIBILIDAD</span><span>+CÓDIGO CELULAR</span><span>CORREO</span><span>LINKEDIN</span>
+  </div>
+</header>
+
+<h2>Perfil</h2>
+<p>TRES O CUATRO FRASES EN PRIMERA PERSONA: QUÉ ESTUDIÓ O ESTUDIA, DÓNDE HA TRABAJADO, QUÉ HACE MEJOR Y UN RESULTADO CONCRETO. SIN ADJETIVOS VACÍOS ("PROACTIVO", "APASIONADO").</p>
+
+<h2>Experiencia</h2>
+
+<div class="role">
+  <div><span class="org">EMPRESA</span> <span class="pos">· CARGO</span></div>
+  <div class="when">MES AÑO – MES AÑO</div>
+</div>
+<p class="ctx">QUÉ HACE LA EMPRESA, EN UNA LÍNEA. CIUDAD.</p>
+<ul>
+  <li>VERBO EN PASADO + QUÉ HIZO + RESULTADO CON NÚMERO SI EXISTE.</li>
+  <li>OTRA FUNCIÓN O LOGRO REAL.</li>
+</ul>
+
+<div class="role">
+  <div><span class="org">EMPRESA</span> <span class="pos">· CARGO</span></div>
+  <div class="when">MES AÑO – MES AÑO</div>
+</div>
+<ul>
+  <li>FUNCIÓN O LOGRO REAL.</li>
+</ul>
+
+<h2>Formación</h2>
+<div class="role">
+  <div><span class="org">CARRERA</span> <span class="pos">· INSTITUCIÓN, CIUDAD</span></div>
+  <div class="when">ESTADO EXACTO Y FECHA</div>
+</div>
+<p style="margin-top:3pt"><b>Cursos</b></p>
+<ul style="margin-top:1pt">
+  <li>NOMBRE DEL CURSO (HORAS). INSTITUCIÓN, AÑO.</li>
+</ul>
+<p style="margin-top:2pt"><b>Idiomas.</b> ESPAÑOL NATIVO; OTRO IDIOMA Y NIVEL REAL.</p>
+
+<h2>Herramientas</h2>
+<dl class="grid">
+  <dt>CATEGORÍA</dt><dd>HERRAMIENTA (NIVEL), HERRAMIENTA</dd>
+  <dt>CATEGORÍA</dt><dd>HERRAMIENTA, HERRAMIENTA</dd>
+</dl>
+
+</body>
+</html>

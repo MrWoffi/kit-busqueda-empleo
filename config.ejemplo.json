@@ -1,0 +1,19 @@
+{
+  "pais": "pe",
+  "moneda": "S/",
+  "linkedin_pais": "Peru",
+  "ciudades": [
+    { "nombre": "Lima", "computrabajo": "lima", "linkedin": "Lima, Peru", "sueldo_minimo": 2500 }
+  ],
+  "buscar_remoto": true,
+  "palabras_clave": [
+    "asistente administrativo",
+    "analista de datos",
+    "atencion al cliente"
+  ],
+  "excluir_si_el_titulo_dice": [
+    "senior", "sr", "lead", "head", "director", "jefe", "gerente", "manager", "supervisor", "coordinador", "practicante", "practicas"
+  ],
+  "zonas_excluidas": [],
+  "dias_hacia_atras": 1
+}

@@ -1,0 +1,8 @@
+# Datos personales de quien usa el kit: nunca se suben
+mis-datos/*
+!mis-datos/.gitkeep
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
